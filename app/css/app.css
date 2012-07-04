@@ -19,23 +19,20 @@
     padding-top: 80px;
 }
 #nav .item{
-    /*background-color: #ffacc8;*/
     background-color: rgba(191, 212, 183, 0.6);
     border: 4px solid #fff;
     border-radius: 10px;
+    box-shadow: -1px -1px 1px #bbb;
     color: #fff;
     display: block;
-    font-size: 26px;
     height: 40px;
     line-height: 36px;
     margin: 4px;
     text-align: center;
+    text-shadow: -1px -1px 1px #bbb;
 }
 
 #nav .item:hover{
-    /*color: rgba(202, 117, 96, 1);*/
-    /*border-color: rgba(202, 117, 96, 1);*/
-    color: rgba(220, 116, 153, 1);
-    border-color: rgba(220, 116, 153, 1);
     text-decoration: none;
+    background-color: rgba(255, 172, 255, 0.6);
 }
