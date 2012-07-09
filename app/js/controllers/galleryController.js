@@ -1,5 +1,8 @@
-'use strict';
-GalleryController.$inject = ['$scope'];
-function GalleryController($scope) {
+GalleryController.$inject = ['$scope', 'contentService', 'paths'];
+function GalleryController($scope, content, paths) {
+
+  content.getFolders(paths.gallery, function(folders){
+    $scope.categories = folders;
+  });
 
 }
