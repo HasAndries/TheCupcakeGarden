@@ -1,3 +1,4 @@
-<div class="content">
-  <div ng-repeat="category in categories">{{category}}</div>
+<link rel="stylesheet" href="css/gallery.css"/>
+<div class="content" ng-init="init()">
+  <div class="span1 thumb" ng-repeat="category in categories">{{category}}</div>
 </div>

@@ -5,8 +5,14 @@ angular.module('theCupcakeGarden.services', [], function($provide){
 
       this.getFolders = function(path, callback){
         $http.get(path).success(function(data){
-          console.log(data);
-          var folders = ['1','2','3'];
+          var links = $(data).find('a');
+          links = links.filter(function(){
+            return $(this).html().endsWith('/');
+          });
+          var folders = links.map(function(){
+            return $(this).html().slice(0, -1);
+          });
+          folders = $.makeArray(folders);
           if (callback) callback(folders);
           return folders;
         });
