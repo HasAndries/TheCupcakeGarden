@@ -3,20 +3,40 @@ angular.module('theCupcakeGarden.services', [], function($provide){
 
     function ContentService(){
 
-      this.getFolders = function(path, callback){
+      function getLinks(path, callback){
         $http.get(path).success(function(data){
           var links = $(data).find('a');
-          links = links.filter(function(){
-            return $(this).html().endsWith('/');
+          links = links.map(function(){
+            var name = $(this).html();
+            return name.endsWith('/') && name.slice(0,-1) || name;
           });
-          var folders = links.map(function(){
-            return $(this).html().slice(0, -1);
-          });
-          folders = $.makeArray(folders);
-          if (callback) callback(folders);
-          return folders;
+          links = $.makeArray(links);
+          if (callback) callback(links);
         });
       }
+
+      this.getItems = function(path, callback){
+        getLinks(path, function(links){
+          var folders = links.filter(function(folder){
+            return folder.indexOf('.') == -1;
+          });
+          var files = links.filter(function(file){
+            return file.indexOf('.') != -1;
+          });
+          var items = folders.map(function(folder){
+            return {
+              'name': folder,
+              'images': files.filter(function(file){
+                return file.toLowerCase().indexOf(folder.toLowerCase()) != -1;
+              })
+            };
+          });
+          items.forEach(function(item){
+            item['thumb'] = item.images.length>0 && path+'/'+item.images[0] || ''
+          });
+          if (callback) callback(items);
+        });
+      };
 
     }
     return new ContentService();

@@ -1,3 +1,29 @@
+.content{
+    background-color: rgba(245, 245, 209, 1);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(245,245,209,0.9)), color-stop(100%, rgba(245,245,209,0.8))), url(../img/tiles/white_leather.png),;
+    background-image: -webkit-linear-gradient(top, rgba(245,245,209,0.9), rgba(245,245,209,0.8)), url(../img/tiles/white_leather.png);
+    background-image: -moz-linear-gradient(top, rgba(245,245,209,0.9), rgba(245,245,209,0.8)), url(../img/tiles/white_leather.png);
+    background-image: -ms-linear-gradient(top, rgba(245,245,209,0.9), rgba(245,245,209,0.8)), url(../img/tiles/white_leather.png);
+    background-image: -o-linear-gradient(top, rgba(245,245,209,0.9), rgba(245,245,209,0.8)), url(../img/tiles/white_leather.png);
+    background-image: linear-gradient(top, rgba(245,245,209,0.9), rgba(245,245,209,0.8)), url(../img/tiles/white_leather.png);
+}
 .thumb{
-    border: 1px solid #00F;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 2px;
+    box-shadow: 1px 1px 4px #ccc;
+    color: rgba(191, 212, 183, 1);
+    margin-top: 5px;
+    margin-bottom: 14px;
+    padding: 7px;
+}
+
+.thumb .name{
+    display: block;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.thumb:hover{
+    color: rgba(255, 120, 255, 1);
+    text-decoration: none;
 }

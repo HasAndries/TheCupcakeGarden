@@ -1,4 +1,7 @@
 <link rel="stylesheet" href="css/gallery.css"/>
-<div class="content" ng-init="init()">
-  <div class="span1 thumb" ng-repeat="category in categories">{{category}}</div>
+<div class="row content" ng-init="init()">
+  <a class="span2 thumb" ng-repeat="category in categories">
+    <img src="{{category.thumb}}" alt="{{category.name}}" />
+    <h2 class="name">{{category.name}}</h2>
+  </a>
 </div>
