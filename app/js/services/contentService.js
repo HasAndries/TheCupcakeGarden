@@ -38,6 +38,18 @@ angular.module('theCupcakeGarden.services', [], function($provide){
         });
       };
 
+      this.getFiles = function(path, callback){
+        getLinks(path, function(links){
+          var files = links.filter(function(file){
+            return file.indexOf('.') != -1;
+          });
+          files = files.map(function(file){
+            return [path,file].join('/');
+          });
+          if (callback) callback(files);
+        });
+      };
+
     }
     return new ContentService();
   }]);

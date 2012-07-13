@@ -1,29 +1,39 @@
 .content{
     background-color: rgba(245, 245, 209, 1);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(245,245,209,0.9)), color-stop(100%, rgba(245,245,209,0.8))), url(../img/tiles/white_leather.png),;
-    background-image: -webkit-linear-gradient(top, rgba(245,245,209,0.9), rgba(245,245,209,0.8)), url(../img/tiles/white_leather.png);
-    background-image: -moz-linear-gradient(top, rgba(245,245,209,0.9), rgba(245,245,209,0.8)), url(../img/tiles/white_leather.png);
-    background-image: -ms-linear-gradient(top, rgba(245,245,209,0.9), rgba(245,245,209,0.8)), url(../img/tiles/white_leather.png);
-    background-image: -o-linear-gradient(top, rgba(245,245,209,0.9), rgba(245,245,209,0.8)), url(../img/tiles/white_leather.png);
-    background-image: linear-gradient(top, rgba(245,245,209,0.9), rgba(245,245,209,0.8)), url(../img/tiles/white_leather.png);
 }
-.thumb{
+.thumbnail{
     background-color: rgba(255, 255, 255, 1);
-    border-radius: 2px;
-    box-shadow: 1px 1px 4px #ccc;
-    color: rgba(191, 212, 183, 1);
+    background-image: -webkit-linear-gradient(top, rgba(245,245,209,0.8), rgba(245,245,209,0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(245,245,209,0.8)), color-stop(100%, rgba(245,245,209,0.8))), url(../img/tiles/textured_stripes.png),;
+    background-image: -moz-linear-gradient(top, rgba(245,245,209,0.8), rgba(245,245,209,0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: -ms-linear-gradient(top, rgba(245,245,209,0.8), rgba(245,245,209,0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: -o-linear-gradient(top, rgba(245,245,209,0.8), rgba(245,245,209,0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: linear-gradient(top, rgba(245,245,209,0.8), rgba(245,245,209,0.8)), url(../img/tiles/textured_stripes.png);
+
     margin-top: 5px;
     margin-bottom: 14px;
-    padding: 7px;
+    text-shadow: 1px 1px 1px rgb(230, 255, 221);
 }
 
-.thumb .name{
+.thumbnail h2{
     display: block;
     text-align: center;
     text-transform: capitalize;
 }
 
-.thumb:hover{
-    color: rgba(255, 120, 255, 1);
+.thumbnail:hover{
     text-decoration: none;
+    text-shadow: 1px 1px 1px rgba(255, 230, 255, 1);
 }
+
+.modal{
+    border-radius: 0px;
+    width: inherit;
+}
+.carousel{
+    margin-bottom: 0px;
+}
+
+/*.carousel-inner{*/
+    /*padding: 2px;*/
+/*}*/
