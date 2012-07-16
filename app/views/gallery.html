@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="css/gallery.css"/>
 <div class="row content" ng-init="init()">
-  <a class="span2 thumbnail" data-toggle="modal" data-target="#galleryModal" ng-repeat="category in categories" ng-click="selectCategory(category)">
+  <a class="span2 thumbnail" data-toggle="modal" data-target="#galleryModal" ng-repeat="category in categories" click="$('#categoryCarousel').carousel();" ng-click="selectCategory(category)">
     <img ng-src="{{category.thumb}}" alt="{{category.name}}" />
     <h2>{{category.name}}</h2>
   </a>
