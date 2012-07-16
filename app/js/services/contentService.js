@@ -50,6 +50,12 @@ angular.module('theCupcakeGarden.services', [], function($provide){
         });
       };
 
+      this.getText = function(path, callback){
+        $http.get(path).success(function(data){
+          if (callback) callback(data);
+        });
+      }
+
     }
     return new ContentService();
   }]);
