@@ -21,19 +21,20 @@
     text-transform: capitalize;
 }
 
-.thumbnail:hover{
+a.thumbnail:hover{
+    color: rgba(255, 0, 255, 0.8);
+    border-color: rgba(255, 0, 255, 0.6);
+    box-shadow: 0 1px 4px rgba(255, 0, 255, 0.4);
     text-decoration: none;
-    text-shadow: 1px 1px 1px rgba(255, 230, 255, 1);
 }
 
 .modal{
-    border-radius: 0px;
-    width: inherit;
+    border-radius: 4px;
 }
 .carousel{
-    margin-bottom: 0px;
+    margin: 2px;
 }
 
-/*.carousel-inner{*/
-    /*padding: 2px;*/
-/*}*/
+.carousel .item > img{
+    margin: 0 auto;
+}
