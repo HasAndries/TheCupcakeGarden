@@ -1,8 +1,18 @@
+html, body{
+    background-color: rgba(245,245,245, 1);
+    background-image: -webkit-linear-gradient(top, rgba(245,245,245,0.8), rgba(245,245,245,0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(245,245,245,0.8)), color-stop(100%, rgba(245,245,245,0.8))), url(../img/tiles/textured_stripes.png),;
+    background-image: -moz-linear-gradient(top, rgba(245,245,245,0.8), rgba(245,245,245,0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: -ms-linear-gradient(top, rgba(245,245,245,0.8), rgba(245,245,245,0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: -o-linear-gradient(top, rgba(245,245,245,0.8), rgba(245,245,245,0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: linear-gradient(top, rgba(245,245,245,0.8), rgba(245,245,245,0.8)), url(../img/tiles/textured_stripes.png);
+}
 .container{
+    margin-top: 20px;
 }
 #main{
-    background: #F5F5D1 url(../img/main_bg.png) top no-repeat;
-    box-shadow: -1px 1px 4px #F5F5D1;
+    background: #fdfdfd url(../img/background.gif) top no-repeat;
+    box-shadow: 0px 0px 2px #ccc;
 }
 .content{
     margin-top: 40px;
@@ -10,8 +20,8 @@
     padding-top: 10px;
 }
 #nav{
-    background: #F5F5D1 url(../img/nav_bg.png) top no-repeat;
-    box-shadow: 1px 1px 4px #F5F5D1;
+    background: #fdfdfd url(../img/nav_bg.png) top no-repeat;
+    box-shadow: 0px 0px 2px #ccc;
     padding-top: 100px;
     padding-bottom: 180px;
 }

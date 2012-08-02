@@ -2,6 +2,9 @@
     opacity: 1;
 }
 
+.content{
+    height: 575px;
+}
 #logo{
-    margin-top: 420px;
+    margin-top: 360px;
 }
