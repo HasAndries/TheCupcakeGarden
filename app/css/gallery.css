@@ -1,18 +1,19 @@
 .content{
-    background-color: rgba(245, 245, 209, 1);
+    background-color: rgba(253, 253, 253, 1);
 }
 .thumbnail{
     background-color: rgba(255, 255, 255, 1);
-    background-image: -webkit-linear-gradient(top, rgba(245,245,209,0.8), rgba(245,245,209,0.8)), url(../img/tiles/textured_stripes.png);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(245,245,209,0.8)), color-stop(100%, rgba(245,245,209,0.8))), url(../img/tiles/textured_stripes.png),;
-    background-image: -moz-linear-gradient(top, rgba(245,245,209,0.8), rgba(245,245,209,0.8)), url(../img/tiles/textured_stripes.png);
-    background-image: -ms-linear-gradient(top, rgba(245,245,209,0.8), rgba(245,245,209,0.8)), url(../img/tiles/textured_stripes.png);
-    background-image: -o-linear-gradient(top, rgba(245,245,209,0.8), rgba(245,245,209,0.8)), url(../img/tiles/textured_stripes.png);
-    background-image: linear-gradient(top, rgba(245,245,209,0.8), rgba(245,245,209,0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: -webkit-linear-gradient(top, rgba(253,253,253,0.8), rgba(253,253,253,0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(253,253,253,0.8)), color-stop(100%, rgba(253,253,253,0.8))), url(../img/tiles/textured_stripes.png),;
+    background-image: -moz-linear-gradient(top, rgba(253,253,253,0.8), rgba(253,253,253,0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: -ms-linear-gradient(top, rgba(253,253,253,0.8), rgba(253,253,253,0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: -o-linear-gradient(top, rgba(253,253,253,0.8), rgba(253,253,253,0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: linear-gradient(top, rgba(253,253,253,0.8), rgba(253,253,253,0.8)), url(../img/tiles/textured_stripes.png);
 
+    color: rgba(97, 99, 98, 1);
     margin-top: 5px;
     margin-bottom: 14px;
-    text-shadow: 1px 1px 1px rgb(230, 255, 221);
+    text-shadow: 1px 1px 1px rgba(240, 255, 240, 1);
 }
 
 .thumbnail h2{
@@ -22,9 +23,8 @@
 }
 
 a.thumbnail:hover{
-    color: rgba(255, 0, 255, 0.8);
-    border-color: rgba(255, 0, 255, 0.6);
-    box-shadow: 0 1px 4px rgba(255, 0, 255, 0.4);
+    color: rgba(231, 127, 175, 1);
+    border-color: rgba(231, 127, 175, 0.6);
     text-decoration: none;
 }
 

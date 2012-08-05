@@ -13,26 +13,11 @@
       <div class="span10" id="main">
         <div ng-view></div>
       </div>
-      <div class="span2" id="nav">
-        <div class="row">
+      <div class="span2" id="nav" ng-controller="NavController">
+        <div class="row" ng-repeat="item in menuItems">
           <div class="span2">
-            <a class="item" href="#/"><h1>home</h1></a>
+            <a class="item" href="#/{{item.link}}"><h1>{{item.name}}</h1></a>
           </div>
-        </div>
-        <div class="row">
-          <span class="span2">
-            <a class="item" href="#/gallery"><h1>gallery</h1></a>
-          </span>
-        </div>
-        <div class="row">
-          <span class="span2">
-            <a class="item" href="#/pricing"><h1>pricing</h1></a>
-          </span>
-        </div>
-        <div class="row">
-          <span class="span2">
-            <a class="item" href="#/contact"><h1>contact</h1></a>
-          </span>
         </div>
       </div>
     </div>
@@ -47,6 +32,8 @@
   <script src="js/extensions.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services/contentService.js"></script>
+  <script src="js/controllers/navController.js"></script>
+
   <script src="js/controllers/homeController.js"></script>
   <script src="js/controllers/galleryController.js"></script>
   <script src="js/controllers/pricingController.js"></script>
