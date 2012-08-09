@@ -30,13 +30,38 @@ a.thumbnail:hover{
 }
 
 .modal{
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
     border-radius: 4px;
-    height: 404px;
+    margin: -300px 0 0 -460px;
+    width: 920px;
 }
 .carousel{
-    margin: 2px;
+    margin: 2px auto;
+    width: 560px;
 }
-
+.carousel .item{
+    height: 400px;
+}
 .carousel .item > img{
     margin: 0 auto;
+    max-height: 100%;
+}
+.modal .thumbnails{
+    /*background-color: #fff;*/
+    padding-left: 6px;
+}
+.modal .thumbnail{
+    border: none;
+    padding: 1px;
+}
+.modal .thumbnail a{
+    display: block;
+    margin: 0 auto;
+}
+.modal .thumbnail img{
+    max-height: 41px;
+    display: block;
+        margin: 0 auto;
 }

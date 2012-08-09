@@ -1,6 +1,10 @@
 <link rel="stylesheet" href="css/gallery.css"/>
 <div class="row content" ng-init="init()">
-  <a class="span2 thumbnail" data-toggle="modal" data-target="#galleryModal" ng-repeat="category in categories" click="$('#categoryCarousel').carousel();" ng-click="selectCategory(category)">
+  <a class="span2 thumbnail"
+     data-toggle="modal" data-target="#galleryModal"
+     ng-repeat="category in categories"
+     click="$('#categoryCarousel').carousel();"
+     ng-click="selectCategory(category)">
     <img ng-src="{{category.thumb}}" alt="{{category.name}}" />
     <h2>{{category.name}}</h2>
   </a>
@@ -16,5 +20,12 @@
     <!-- Carousel nav -->
     <a class="carousel-control left" href="#categoryCarousel" data-slide="prev">&lsaquo;</a>
     <a class="carousel-control right" href="#categoryCarousel" data-slide="next">&rsaquo;</a>
+  </div>
+  <div class="thumbnails">
+    <div class="span1 thumbnail" ng-repeat="image in images">
+      <a onclick="$('#categoryCarousel').carousel({{$index}})">
+        <img ng-src="{{image}}" alt />
+      </a>
+    </div>
   </div>
 </div>
