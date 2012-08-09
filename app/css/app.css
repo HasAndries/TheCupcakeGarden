@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'SFCartoonistHand';
+    src: url('../fonts/SF_Cartoonist_Hand-webfont.eot');
+    src: url('../fonts/SF_Cartoonist_Hand-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/SF_Cartoonist_Hand-webfont.woff') format('woff'),
+         url('../fonts/SF_Cartoonist_Hand-webfont.ttf') format('truetype'),
+         url('../fonts/SF_Cartoonist_Hand-webfont.svg#SFCartoonistHand') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html, body{
     background-color: rgba(245,245,245, 1);
     background-image: -webkit-linear-gradient(top, rgba(245,245,245,0.8), rgba(245,245,245,0.8)), url(../img/tiles/textured_stripes.png);
@@ -49,5 +60,7 @@ html, body{
 }
 
 #nav h1{
-    font-size: 22px;
+    font-family: SFCartoonistHand,serif;
+    font-size: 30px;
+    font-weight: normal;
 }

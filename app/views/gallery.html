@@ -4,17 +4,17 @@
     <img ng-src="{{category.thumb}}" alt="{{category.name}}" />
     <h2>{{category.name}}</h2>
   </a>
-  <div class="modal hide backdrop" id="galleryModal">
-    <div id="categoryCarousel" class="carousel slide">
-      <!-- Carousel items -->
-      <div class="carousel-inner">
-        <div class="item" ng-class="$first && 'active'" ng-repeat="image in images">
-          <img ng-src="{{image}}" alt />
-        </div>
+</div>
+<div class="modal hide backdrop" id="galleryModal">
+  <div id="categoryCarousel" class="carousel slide">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+      <div class="item" ng-class="$first && 'active'" ng-repeat="image in images">
+        <img ng-src="{{image}}" alt />
       </div>
-      <!-- Carousel nav -->
-      <a class="carousel-control left" href="#categoryCarousel" data-slide="prev">&lsaquo;</a>
-      <a class="carousel-control right" href="#categoryCarousel" data-slide="next">&rsaquo;</a>
     </div>
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#categoryCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#categoryCarousel" data-slide="next">&rsaquo;</a>
   </div>
 </div>
