@@ -34,6 +34,9 @@ angular.module('theCupcakeGarden.services', [], function($provide){
           items.forEach(function(item){
             item['thumb'] = item.images.length>0 && path+'/'+item.images[0] || ''
           });
+          items = items.filter(function(item){
+            return item['thumb'] != '';
+          });
           if (callback) callback(items);
         });
       };
