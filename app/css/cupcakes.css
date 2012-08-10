@@ -1,8 +1,15 @@
 .content{
     background-color: rgba(253, 253, 253, 1);
-    padding: 10px 39px;
+    padding: 20px 39px;
 }
 
 .content h1{
     color: rgba(97, 99, 98, 1);
+}
+
+.list{
+    margin-left: 0;
+}
+.list .row{
+    margin-left: 0;
 }

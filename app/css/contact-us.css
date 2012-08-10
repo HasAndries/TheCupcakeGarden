@@ -1,0 +1,38 @@
+.content{
+    background-color: rgba(253, 253, 253, 1);
+    padding: 10px 39px;
+}
+
+#contactInfo{
+    margin-top: 20px;
+}
+#arrow{
+    position: absolute;
+    margin-left: 304px;
+    margin-top: 46px;
+    width: 144px;
+    z-index: 10;
+}
+#headVisit{
+    margin-top: 50px;
+}
+#logo{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+#headContact{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.content h3{
+    color: rgba(127, 179, 177, 1);
+}
+.content h4{
+    color: #000;
+}
+.content h4:hover{
+    color: rgba(127, 179, 177, 1);
+}
+.content a:hover{
+    text-decoration: none;
+}

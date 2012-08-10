@@ -7,8 +7,8 @@ function NavController($scope) {
     {'name':'cupcakes',         'link':'cupcakes'},
     {'name':'in the store',     'link':'in-the-store'},
     {'name':'functions',        'link':'functions'},
-    {'name':'classes',          'link':'classes'},
-    {'name':'contact us',       'link':'contact-us'}
+    {'name':'contact us',       'link':'contact-us'},
+    {'name':'about us',         'link':'about-us'}
   ];
 
 }

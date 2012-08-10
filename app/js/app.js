@@ -6,8 +6,8 @@ theCupcakeGarden.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/cupcakes', {templateUrl: 'views/cupcakes.html'});
   $routeProvider.when('/in-the-store', {templateUrl: 'views/in-the-store.html'});
   $routeProvider.when('/functions', {templateUrl: 'views/functions.html'});
-  $routeProvider.when('/classes', {templateUrl: 'views/classes.html'});
   $routeProvider.when('/contact-us', {templateUrl: 'views/contact-us.html'});
+  $routeProvider.when('/about-us', {templateUrl: 'views/about-us.html'});
   $routeProvider.otherwise({redirectTo: '/'});
 }]);
 
