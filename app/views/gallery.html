@@ -18,8 +18,8 @@
       </div>
     </div>
     <!-- Carousel nav -->
-    <a class="carousel-control left" href="#categoryCarousel" data-slide="prev">&lsaquo;</a>
-    <a class="carousel-control right" href="#categoryCarousel" data-slide="next">&rsaquo;</a>
+    <a class="carousel-control left" onclick="$('#categoryCarousel').carousel('prev')">&lsaquo;</a>
+    <a class="carousel-control right" onclick="$('#categoryCarousel').carousel('next')">&rsaquo;</a>
   </div>
   <div class="thumbnails">
     <div class="span1 thumbnail" ng-repeat="image in images">
