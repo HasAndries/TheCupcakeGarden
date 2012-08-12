@@ -1,11 +1,12 @@
-#backdrop{
+#backdrop {
     opacity: 1;
 }
 
-.content{
+.content {
     height: 516px;
 }
-#logo{
+
+#logo {
     margin-top: 380px;
     margin-left: 50px
 }

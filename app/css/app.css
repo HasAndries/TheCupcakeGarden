@@ -1,48 +1,56 @@
 @font-face {
     font-family: 'SFCartoonistHand';
     src: url('../fonts/SF_Cartoonist_Hand-webfont.eot');
-    src: url('../fonts/SF_Cartoonist_Hand-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/SF_Cartoonist_Hand-webfont.woff') format('woff'),
-         url('../fonts/SF_Cartoonist_Hand-webfont.ttf') format('truetype'),
-         url('../fonts/SF_Cartoonist_Hand-webfont.svg#SFCartoonistHand') format('svg');
+    src: url('../fonts/SF_Cartoonist_Hand-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/SF_Cartoonist_Hand-webfont.woff') format('woff'), url('../fonts/SF_Cartoonist_Hand-webfont.ttf') format('truetype'), url('../fonts/SF_Cartoonist_Hand-webfont.svg#SFCartoonistHand') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
-html, body{
-    background-color: rgba(245,245,245, 1);
-    background-image: -webkit-linear-gradient(top, rgba(245,245,245,0.8), rgba(245,245,245,0.8)), url(../img/tiles/textured_stripes.png);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(245,245,245,0.8)), color-stop(100%, rgba(245,245,245,0.8))), url(../img/tiles/textured_stripes.png),;
-    background-image: -moz-linear-gradient(top, rgba(245,245,245,0.8), rgba(245,245,245,0.8)), url(../img/tiles/textured_stripes.png);
-    background-image: -ms-linear-gradient(top, rgba(245,245,245,0.8), rgba(245,245,245,0.8)), url(../img/tiles/textured_stripes.png);
-    background-image: -o-linear-gradient(top, rgba(245,245,245,0.8), rgba(245,245,245,0.8)), url(../img/tiles/textured_stripes.png);
-    background-image: linear-gradient(top, rgba(245,245,245,0.8), rgba(245,245,245,0.8)), url(../img/tiles/textured_stripes.png);
+html, body {
+    background-color: rgba(245, 245, 245, 1);
+    background-image: -webkit-linear-gradient(top, rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(245, 245, 245, 0.8)), color-stop(100%, rgba(245, 245, 245, 0.8))), url(../img/tiles/textured_stripes.png),;
+    background-image: -moz-linear-gradient(top, rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: -ms-linear-gradient(top, rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: -o-linear-gradient(top, rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: linear-gradient(top, rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)), url(../img/tiles/textured_stripes.png);
 }
-.container{
+
+.container {
     margin-top: 20px;
 }
-#main{
+
+#facebook{
+
+}
+
+#main {
     background: #fdfdfd url(../img/background.gif) top no-repeat;
     box-shadow: 0px 0px 2px #ccc;
 }
-.content{
+
+.content {
     margin-top: 100px;
     margin-left: 0;
     padding-top: 10px;
     min-height: 486px;
 }
-#nav{
+
+#nav {
     background-color: #fdfdfd;
     box-shadow: 0px 0px 2px #ccc;
 }
-#navLogo{
+
+#navLogo {
     height: 100px;
     padding: 0 4px 10px;
 }
-#navLogo img{
+
+#navLogo img {
     width: 132px;
 }
-#nav .item{
+
+#nav .item {
     background-color: rgba(127, 179, 177, 0.8);
     border: 4px solid #fff;
     border-radius: 10px;
@@ -57,17 +65,17 @@ html, body{
     padding-top: 4px;
 }
 
-#navFooter{
+#navFooter {
     padding-bottom: 10px;
 }
 
-#nav .item:hover{
+#nav .item:hover {
     text-decoration: none;
     background-color: rgba(231, 177, 175, 0.8);
 }
 
-#nav h1{
-    font-family: SFCartoonistHand,serif;
+#nav h1 {
+    font-family: SFCartoonistHand, serif;
     font-size: 28px;
     font-weight: normal;
 }

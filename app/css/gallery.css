@@ -1,15 +1,16 @@
-.content{
+.content {
     background-color: rgba(253, 253, 253, 1);
     padding-left: 40px;
 }
-.thumbnail{
+
+.thumbnail {
     background-color: rgba(255, 255, 255, 1);
-    background-image: -webkit-linear-gradient(top, rgba(253,253,253,0.8), rgba(253,253,253,0.8)), url(../img/tiles/textured_stripes.png);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(253,253,253,0.8)), color-stop(100%, rgba(253,253,253,0.8))), url(../img/tiles/textured_stripes.png),;
-    background-image: -moz-linear-gradient(top, rgba(253,253,253,0.8), rgba(253,253,253,0.8)), url(../img/tiles/textured_stripes.png);
-    background-image: -ms-linear-gradient(top, rgba(253,253,253,0.8), rgba(253,253,253,0.8)), url(../img/tiles/textured_stripes.png);
-    background-image: -o-linear-gradient(top, rgba(253,253,253,0.8), rgba(253,253,253,0.8)), url(../img/tiles/textured_stripes.png);
-    background-image: linear-gradient(top, rgba(253,253,253,0.8), rgba(253,253,253,0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: -webkit-linear-gradient(top, rgba(253, 253, 253, 0.8), rgba(253, 253, 253, 0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(253, 253, 253, 0.8)), color-stop(100%, rgba(253, 253, 253, 0.8))), url(../img/tiles/textured_stripes.png),;
+    background-image: -moz-linear-gradient(top, rgba(253, 253, 253, 0.8), rgba(253, 253, 253, 0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: -ms-linear-gradient(top, rgba(253, 253, 253, 0.8), rgba(253, 253, 253, 0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: -o-linear-gradient(top, rgba(253, 253, 253, 0.8), rgba(253, 253, 253, 0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: linear-gradient(top, rgba(253, 253, 253, 0.8), rgba(253, 253, 253, 0.8)), url(../img/tiles/textured_stripes.png);
 
     color: rgba(97, 99, 98, 1);
     margin-top: 5px;
@@ -17,19 +18,19 @@
     text-shadow: 1px 1px 1px rgba(240, 255, 240, 1);
 }
 
-.thumbnail h2{
+.thumbnail h2 {
     display: block;
     text-align: center;
     text-transform: capitalize;
 }
 
-a.thumbnail:hover{
+a.thumbnail:hover {
     color: rgba(231, 127, 175, 1);
     border-color: rgba(231, 127, 175, 0.6);
     text-decoration: none;
 }
 
-.modal{
+.modal {
     background-color: transparent;
     border: none;
     box-shadow: none;
@@ -37,31 +38,38 @@ a.thumbnail:hover{
     margin: -300px 0 0 -460px;
     width: 920px;
 }
-.carousel{
+
+.carousel {
     margin: 2px auto;
     width: 560px;
 }
-.carousel .item{
+
+.carousel .item {
     height: 400px;
 }
-.carousel .item > img{
+
+.carousel .item > img {
     margin: 0 auto;
     max-height: 100%;
 }
-.modal .thumbnails{
+
+.modal .thumbnails {
     /*background-color: #fff;*/
     padding-left: 6px;
 }
-.modal .thumbnail{
+
+.modal .thumbnail {
     border: none;
     padding: 1px;
 }
-.modal .thumbnail a{
+
+.modal .thumbnail a {
     display: block;
     margin: 0 auto;
 }
-.modal .thumbnail img{
+
+.modal .thumbnail img {
     max-height: 41px;
     display: block;
-        margin: 0 auto;
+    margin: 0 auto;
 }

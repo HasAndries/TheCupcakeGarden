@@ -1,31 +1,32 @@
 <link rel="stylesheet" href="css/gallery.css"/>
 <div class="row content" ng-init="init()">
-  <a class="span2 thumbnail"
-     data-toggle="modal" data-target="#galleryModal"
-     ng-repeat="category in categories"
-     onclick="$('#categoryCarousel').carousel();"
-     ng-click="selectCategory(category)">
-    <img ng-src="{{category.thumb}}" alt="{{category.name}}" />
-    <h2>{{category.name}}</h2>
-  </a>
+	<a class="span2 thumbnail"
+	   data-toggle="modal" data-target="#galleryModal"
+	   ng-repeat="category in categories"
+	   onclick="$('#categoryCarousel').carousel();"
+	   ng-click="selectCategory(category)">
+		<img ng-src="{{category.thumb}}" alt="{{category.name}}"/>
+
+		<h2>{{category.name}}</h2>
+	</a>
 </div>
 <div class="modal hide backdrop" id="galleryModal">
-  <div id="categoryCarousel" class="carousel slide">
-    <!-- Carousel items -->
-    <div class="carousel-inner">
-      <div class="item" ng-class="$first && 'active'" ng-repeat="image in images">
-        <img ng-src="{{image}}" alt />
-      </div>
-    </div>
-    <!-- Carousel nav -->
-    <a class="carousel-control left" onclick="$('#categoryCarousel').carousel('prev')">&lsaquo;</a>
-    <a class="carousel-control right" onclick="$('#categoryCarousel').carousel('next')">&rsaquo;</a>
-  </div>
-  <div class="thumbnails">
-    <div class="span1 thumbnail" ng-repeat="image in images">
-      <a onclick="$('#categoryCarousel').carousel({{$index}})">
-        <img ng-src="{{image}}" alt />
-      </a>
-    </div>
-  </div>
+	<div id="categoryCarousel" class="carousel slide">
+		<!-- Carousel items -->
+		<div class="carousel-inner">
+			<div class="item" ng-class="$first && 'active'" ng-repeat="image in images">
+				<img ng-src="{{image}}" alt/>
+			</div>
+		</div>
+		<!-- Carousel nav -->
+		<a class="carousel-control left" onclick="$('#categoryCarousel').carousel('prev')">&lsaquo;</a>
+		<a class="carousel-control right" onclick="$('#categoryCarousel').carousel('next')">&rsaquo;</a>
+	</div>
+	<div class="thumbnails">
+		<div class="span1 thumbnail" ng-repeat="image in images">
+			<a onclick="$('#categoryCarousel').carousel({{$index}})">
+				<img ng-src="{{image}}" alt/>
+			</a>
+		</div>
+	</div>
 </div>
