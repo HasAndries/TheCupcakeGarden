@@ -1,5 +1,5 @@
-GalleryController.$inject = ['$scope', 'contentService', 'paths'];
-function GalleryController($scope, content, paths) {
+GalleryController.$inject = ['$scope', 'contentService', 'paths', 'googleService'];
+function GalleryController($scope, content, paths, google) {
 
   $scope.imagesLoaded = false;
 
@@ -10,6 +10,7 @@ function GalleryController($scope, content, paths) {
   };
 
   $scope.selectCategory = function(category){
+    google.trackPage(category.name);
     $scope.imagesLoaded = false;
     var path = [paths.gallery,category.name].join('/');
     content.getFiles(path, function(files){

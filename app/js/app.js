@@ -1,3 +1,4 @@
+var theCupcakeGardenServices = angular.module('theCupcakeGarden.services', []);
 var theCupcakeGarden = angular.module('theCupcakeGarden', ['theCupcakeGarden.services']);
 
 theCupcakeGarden.config(['$routeProvider', function($routeProvider) {

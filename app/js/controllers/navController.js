@@ -1,5 +1,10 @@
-NavController.$inject = ['$scope'];
-function NavController($scope) {
+NavController.$inject = ['$scope','$rootScope','googleService'];
+function NavController($scope, $rootScope, google) {
+
+  //Google Analytics for non-localhost
+  $rootScope.$on('$viewContentLoaded', function(event) {
+    google.trackPage();
+  });
 
   $scope.menuItems = [
     {'name':'home',             'link':''},
