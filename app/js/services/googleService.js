@@ -3,8 +3,8 @@ theCupcakeGardenServices.factory('googleService', ['$window','$location',functio
 
     this.trackPage = function(subPath){
       var path;
-      path = $location.path();
-      if (path.indexOf('localhost') != -1){
+      if ($location.host() != 'localhost'){
+        path = $location.path();
         if (subPath) path = [path,subPath].join('/');
         $window._gaq.push(['_trackPageview', path]);
       }
