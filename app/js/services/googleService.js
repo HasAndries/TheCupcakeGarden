@@ -6,7 +6,7 @@ theCupcakeGardenServices.factory('googleService', ['$window','$location',functio
       path = $location.path();
       if (path.indexOf('localhost') != -1){
         if (subPath) path = [path,subPath].join('/');
-        $window._gaq.push(['_trackPageView', path]);
+        $window._gaq.push(['_trackPageview', path]);
       }
     };
 
