@@ -1,10 +1,11 @@
-GalleryController.$inject = ['$scope', 'contentService', 'paths', 'googleService'];
-function GalleryController($scope, content, paths, google) {
+GalleryController.$inject = ['$scope', 'contentService', 'paths', 'googleService','$filter'];
+function GalleryController($scope, content, paths, google,$filter) {
 
   $scope.imagesLoaded = false;
 
   $scope.init = function(){
     content.getItems(paths.gallery, function(items){
+      items = $filter('orderBy')(items, '+name');
       $scope.categories = items;
     });
   };

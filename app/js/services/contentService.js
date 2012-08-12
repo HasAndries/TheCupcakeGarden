@@ -6,7 +6,7 @@ theCupcakeGardenServices.factory('contentService', ['$http',function($http){
       $http.get(path).success(function(data){
         var links = $(data).find('a');
         links = links.map(function(){
-          var name = $(this).html().toLowerCase();
+          var name = $(this).html();
           return name.endsWith('/') && name.slice(0,-1) || name;
         });
         links = $.makeArray(links);
