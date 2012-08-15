@@ -44,3 +44,31 @@
 .content a:hover {
     text-decoration: none;
 }
+.content .facebook-logo{
+    display: block;
+    margin-top: 20px;
+    box-shadow: 1px 1px 1px rgba(210, 210, 200, 0.8);
+    width: 200px;
+}
+.content .facebook-logo:hover{
+}
+.content .facebook-logo img{
+    width: 200px;
+}
+a.newsletter:hover{
+    color:#ffffff;
+    background-color: rgba(127, 179, 177, 0.8);
+}
+a.newsletter {
+    background-color: rgba(231, 177, 175, 1);
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px rgba(210, 210, 200, 0.8);
+    color:#FFFFFF;
+    display: inline-block;
+    font-family: Verdana,serif;
+    font-size: 12px;
+    font-weight:bold;
+    padding: 3px 4px;
+    text-decoration: none;
+    margin-top:10px;
+}
