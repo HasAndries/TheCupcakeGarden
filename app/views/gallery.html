@@ -2,7 +2,7 @@
 	<a class="span2 thumbnail"
 	   data-toggle="modal" data-target="#galleryModal"
 	   ng-repeat="category in categories"
-	   onclick="$('#categoryCarousel').carousel();"
+	   onclick="$('#categoryCarousel').carousel({interval:false});"
 	   ng-click="selectCategory(category)">
 		<img ng-src="{{category.thumb}}" alt="{{category.name}}"/>
 
