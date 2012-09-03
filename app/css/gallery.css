@@ -1,9 +1,11 @@
 .content {
+    background-color: #FDFDFD;
     background-color: rgba(253, 253, 253, 1);
     padding-left: 40px;
 }
 
 .thumbnail {
+    background-color: #FFFFFF;
     background-color: rgba(255, 255, 255, 1);
     background-image: -webkit-linear-gradient(top, rgba(253, 253, 253, 0.8), rgba(253, 253, 253, 0.8)), url(../img/tiles/textured_stripes.png);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(253, 253, 253, 0.8)), color-stop(100%, rgba(253, 253, 253, 0.8))), url(../img/tiles/textured_stripes.png),;
@@ -12,6 +14,7 @@
     background-image: -o-linear-gradient(top, rgba(253, 253, 253, 0.8), rgba(253, 253, 253, 0.8)), url(../img/tiles/textured_stripes.png);
     background-image: linear-gradient(top, rgba(253, 253, 253, 0.8), rgba(253, 253, 253, 0.8)), url(../img/tiles/textured_stripes.png);
 
+    color: #616362;
     color: rgba(97, 99, 98, 1);
     margin-top: 5px;
     margin-bottom: 14px;
@@ -25,6 +28,7 @@
 }
 
 a.thumbnail:hover {
+    color: #E77FAF;
     color: rgba(231, 127, 175, 1);
     border-color: rgba(231, 127, 175, 0.6);
     text-decoration: none;

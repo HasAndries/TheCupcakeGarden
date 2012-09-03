@@ -1,13 +1,16 @@
-theCupcakeGardenServices.factory('contentService', ['$http', function ($http) {
+theCupcakeGardenServices.factory('contentService', ['$http','$filter', function ($http,$filter) {
 
   function ContentService() {
 
+    function endsWith(str, suffix) {
+      return str.indexOf(suffix, this.length - suffix.length) !== -1;
+    }
     function getLinks(path, callback) {
       $http.get(path).success(function (data) {
         var links = $(data).find('a');
-        links = links.map(function () {
-          var name = $(this).html();
-          return name.endsWith('/') && name.slice(0, -1) || name;
+        links = $.map(links, function (link) {
+          var name = $(link).html();
+          return endsWith(name, '/') && name.slice(0, -1) || name;
         });
         links = $.makeArray(links);
         if (callback) callback(links);
@@ -16,24 +19,24 @@ theCupcakeGardenServices.factory('contentService', ['$http', function ($http) {
 
     this.getItems = function (path, callback) {
       getLinks(path, function (links) {
-        var folders = links.filter(function (folder) {
+        var folders = $filter('filter')(links, function(folder){
           return folder.indexOf('.') == -1;
         });
-        var files = links.filter(function (file) {
+        var files = $filter('filter')(links, function(file){
           return file.indexOf('.') != -1;
         });
-        var items = folders.map(function (folder) {
+        var items = $.map(folders, function (folder) {
           return {
             'name':folder,
-            'images':files.filter(function (file) {
+            'images':$filter('filter')(files, function (file) {
               return file.toLowerCase().indexOf(folder.toLowerCase()) != -1;
             })
           };
         });
-        items.forEach(function (item) {
+        angular.forEach(items, function (item) {
           item['thumb'] = item.images.length > 0 && path + '/' + item.images[0] || ''
         });
-        items = items.filter(function (item) {
+        items = $filter('filter')(items, function (item) {
           return item['thumb'] != '';
         });
         if (callback) callback(items);
@@ -42,10 +45,10 @@ theCupcakeGardenServices.factory('contentService', ['$http', function ($http) {
 
     this.getFiles = function (path, callback) {
       getLinks(path, function (links) {
-        var files = links.filter(function (file) {
+        var files = $filter('filter')(links, function (file) {
           return file.indexOf('.') != -1;
         });
-        files = files.map(function (file) {
+        files = $.map(files, function (file) {
           return [path, file].join('/');
         });
         if (callback) callback(files);

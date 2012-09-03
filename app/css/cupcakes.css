@@ -1,9 +1,11 @@
 .content {
+    background-color: #FDFDFD;
     background-color: rgba(253, 253, 253, 1);
     padding: 20px 39px;
 }
 
 .content h1 {
+    color: #616362;
     color: rgba(97, 99, 98, 1);
 }
 

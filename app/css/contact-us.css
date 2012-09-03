@@ -1,4 +1,5 @@
 .content {
+    background-color: #FDFDFD;
     background-color: rgba(253, 253, 253, 1);
     padding: 10px 39px;
 }
@@ -30,6 +31,7 @@
 }
 
 .content h3 {
+    color: #7FB3B1;
     color: rgba(127, 179, 177, 1);
 }
 
@@ -38,6 +40,7 @@
 }
 
 .content h4:hover {
+    color: #7FB3B1;
     color: rgba(127, 179, 177, 1);
 }
 
@@ -57,9 +60,11 @@
 }
 a.newsletter:hover{
     color:#ffffff;
+    background-color: #7FB3B1;
     background-color: rgba(127, 179, 177, 0.8);
 }
 a.newsletter {
+    background-color: #E7B1AF;
     background-color: rgba(231, 177, 175, 1);
     border-radius: 2px;
     box-shadow: 1px 1px 1px rgba(210, 210, 200, 0.8);

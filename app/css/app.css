@@ -7,6 +7,7 @@
 }
 
 html, body {
+    background-color: #F5F5F5;
     background-color: rgba(245, 245, 245, 1);
     background-image: -webkit-linear-gradient(top, rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)), url(../img/tiles/textured_stripes.png);
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(245, 245, 245, 0.8)), color-stop(100%, rgba(245, 245, 245, 0.8))), url(../img/tiles/textured_stripes.png),;
@@ -25,6 +26,7 @@ html, body {
 }
 
 #main {
+    background-color: #fdfdfd;
     background: #fdfdfd url(../img/background.gif) top no-repeat;
     box-shadow: 0px 0px 2px #ccc;
 }
@@ -51,6 +53,7 @@ html, body {
 }
 
 #nav .item {
+    background-color: #7FB3B1;
     background-color: rgba(127, 179, 177, 0.8);
     border: 4px solid #fff;
     border-radius: 10px;
@@ -71,6 +74,7 @@ html, body {
 
 #nav .item:hover {
     text-decoration: none;
+    background-color: #E7B1AF;
     background-color: rgba(231, 177, 175, 0.8);
 }
 
@@ -78,4 +82,204 @@ html, body {
     font-family: SFCartoonistHand, serif;
     font-size: 28px;
     font-weight: normal;
+}
+/********************************************************
+HOME
+********************************************************/
+#backdrop {
+    opacity: 1;
+}
+
+.content.home {
+    height: 516px;
+}
+
+#logo {
+    margin-top: 310px;
+    margin-left: 50px
+}
+/********************************************************
+OTHER
+********************************************************/
+.content.other {
+    background-color: #FDFDFD;
+    background-color: rgba(253, 253, 253, 1);
+    padding: 20px 39px;
+}
+
+.content.other h1 {
+    color: #616362;
+    color: rgba(97, 99, 98, 1);
+}
+
+.list {
+    margin-left: 0;
+}
+
+.list .row {
+    margin-left: 0;
+}
+/********************************************************
+GALLERY
+********************************************************/
+.content.gallery {
+    background-color: #FDFDFD;
+    background-color: rgba(253, 253, 253, 1);
+    padding-left: 40px;
+}
+
+.thumbnail {
+    background-color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 1);
+    background-image: -webkit-linear-gradient(top, rgba(253, 253, 253, 0.8), rgba(253, 253, 253, 0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(253, 253, 253, 0.8)), color-stop(100%, rgba(253, 253, 253, 0.8))), url(../img/tiles/textured_stripes.png),;
+    background-image: -moz-linear-gradient(top, rgba(253, 253, 253, 0.8), rgba(253, 253, 253, 0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: -ms-linear-gradient(top, rgba(253, 253, 253, 0.8), rgba(253, 253, 253, 0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: -o-linear-gradient(top, rgba(253, 253, 253, 0.8), rgba(253, 253, 253, 0.8)), url(../img/tiles/textured_stripes.png);
+    background-image: linear-gradient(top, rgba(253, 253, 253, 0.8), rgba(253, 253, 253, 0.8)), url(../img/tiles/textured_stripes.png);
+
+    color: #616362;
+    color: rgba(97, 99, 98, 1);
+    margin-top: 5px;
+    margin-bottom: 14px;
+    text-shadow: 1px 1px 1px rgba(240, 255, 240, 1);
+}
+
+.thumbnail h2 {
+    display: block;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+a.thumbnail:hover {
+    color: #E77FAF;
+    color: rgba(231, 127, 175, 1);
+    border-color: rgba(231, 127, 175, 0.6);
+    text-decoration: none;
+}
+
+.modal {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 4px;
+    margin: -300px 0 0 -460px;
+    width: 920px;
+}
+
+.carousel {
+    margin: 2px auto;
+    width: 560px;
+}
+
+.carousel .item {
+    height: 400px;
+}
+
+.carousel .item > img {
+    margin: 0 auto;
+    max-height: 100%;
+}
+
+.modal .thumbnails {
+    /*background-color: #fff;*/
+    padding-left: 6px;
+}
+
+.modal .thumbnail {
+    border: none;
+    padding: 1px;
+}
+
+.modal .thumbnail a {
+    display: block;
+    margin: 0 auto;
+}
+
+.modal .thumbnail img {
+    max-height: 41px;
+    display: block;
+    margin: 0 auto;
+}
+/********************************************************
+CONTACT US
+********************************************************/
+.content.contact {
+    background-color: #FDFDFD;
+    background-color: rgba(253, 253, 253, 1);
+    padding: 10px 39px;
+}
+
+#contactInfo {
+    margin-top: 20px;
+}
+
+#arrow {
+    position: absolute;
+    margin-left: 304px;
+    margin-top: 40px;
+    width: 144px;
+    z-index: 10;
+}
+
+#headVisit {
+    margin-top: 50px;
+}
+
+.logo.contact {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#headContact {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.content h3 {
+    color: #7FB3B1;
+    color: rgba(127, 179, 177, 1);
+}
+
+.content h4 {
+    color: #000;
+}
+
+.content h4:hover {
+    color: #7FB3B1;
+    color: rgba(127, 179, 177, 1);
+}
+
+.content a:hover {
+    text-decoration: none;
+}
+.content .facebook-logo{
+    display: block;
+    margin-top: 20px;
+    box-shadow: 1px 1px 1px rgba(210, 210, 200, 0.8);
+    width: 200px;
+}
+.content .facebook-logo:hover{
+}
+.content .facebook-logo img{
+    width: 200px;
+}
+a.newsletter:hover{
+    color:#ffffff;
+    background-color: #7FB3B1;
+    background-color: rgba(127, 179, 177, 0.8);
+}
+a.newsletter {
+    background-color: #E7B1AF;
+    background-color: rgba(231, 177, 175, 1);
+    border-radius: 2px;
+    box-shadow: 1px 1px 1px rgba(210, 210, 200, 0.8);
+    color:#FFFFFF;
+    display: inline-block;
+    font-family: Verdana,serif;
+    font-size: 12px;
+    font-weight:bold;
+    padding: 3px 4px;
+    text-decoration: none;
+    margin-top:10px;
 }
