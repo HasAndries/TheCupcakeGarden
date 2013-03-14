@@ -57,7 +57,7 @@
 }(window.jQuery);
 /* ==========================================================
  * bootstrap-alert.js v2.0.4
- * http://twitter.github.com/bootstrap/javascript.html#alerts
+ * http://twitter.github.com/bootstrap/javascript.ui#alerts
  * ==========================================================
  * Copyright 2012 Twitter, Inc.
  *
@@ -147,7 +147,7 @@
 }(window.jQuery);
 /* ============================================================
  * bootstrap-button.js v2.0.4
- * http://twitter.github.com/bootstrap/javascript.html#buttons
+ * http://twitter.github.com/bootstrap/javascript.ui#buttons
  * ============================================================
  * Copyright 2012 Twitter, Inc.
  *
@@ -182,7 +182,7 @@
     var d = 'disabled'
             , $el = this.$element
             , data = $el.data()
-            , val = $el.is('input') ? 'val' : 'html'
+            , val = $el.is('input') ? 'val' : 'ui'
 
     state = state + 'Text'
     data.resetText || $el.data('resetText', $el[val]())
@@ -243,7 +243,7 @@
 }(window.jQuery);
 /* ==========================================================
  * bootstrap-carousel.js v2.0.4
- * http://twitter.github.com/bootstrap/javascript.html#carousel
+ * http://twitter.github.com/bootstrap/javascript.ui#carousel
  * ==========================================================
  * Copyright 2012 Twitter, Inc.
  *
@@ -404,7 +404,7 @@
 }(window.jQuery);
 /* =============================================================
  * bootstrap-collapse.js v2.0.4
- * http://twitter.github.com/bootstrap/javascript.html#collapse
+ * http://twitter.github.com/bootstrap/javascript.ui#collapse
  * =============================================================
  * Copyright 2012 Twitter, Inc.
  *
@@ -549,7 +549,7 @@
 }(window.jQuery);
 /* ============================================================
  * bootstrap-dropdown.js v2.0.4
- * http://twitter.github.com/bootstrap/javascript.html#dropdowns
+ * http://twitter.github.com/bootstrap/javascript.ui#dropdowns
  * ============================================================
  * Copyright 2012 Twitter, Inc.
  *
@@ -578,7 +578,7 @@
   var toggle = '[data-toggle="dropdown"]'
           , Dropdown = function (element) {
             var $el = $(element).on('click.dropdown.data-api', this.toggle)
-            $('html').on('click.dropdown.data-api', function () {
+            $('ui').on('click.dropdown.data-api', function () {
               $el.parent().removeClass('open')
             })
           }
@@ -638,7 +638,7 @@
    * =================================== */
 
   $(function () {
-    $('html').on('click.dropdown.data-api', clearMenus)
+    $('ui').on('click.dropdown.data-api', clearMenus)
     $('body')
             .on('click.dropdown', '.dropdown form', function (e) {
               e.stopPropagation()
@@ -649,7 +649,7 @@
 }(window.jQuery);
 /* =========================================================
  * bootstrap-modal.js v2.0.4
- * http://twitter.github.com/bootstrap/javascript.html#modals
+ * http://twitter.github.com/bootstrap/javascript.ui#modals
  * =========================================================
  * Copyright 2012 Twitter, Inc.
  *
@@ -861,7 +861,7 @@
 }(window.jQuery);
 /* ===========================================================
  * bootstrap-tooltip.js v2.0.4
- * http://twitter.github.com/bootstrap/javascript.html#tooltips
+ * http://twitter.github.com/bootstrap/javascript.ui#tooltips
  * Inspired by the original jQuery.tipsy by Jason Frame
  * ===========================================================
  * Copyright 2012 Twitter, Inc.
@@ -997,7 +997,7 @@
                 .addClass('in')
       }
     }, isHTML:function (text) {
-      // html string detection logic adapted from jQuery
+      // ui string detection logic adapted from jQuery
       return typeof text != 'string'
               || ( text.charAt(0) === "<"
               && text.charAt(text.length - 1) === ">"
@@ -1007,7 +1007,7 @@
       var $tip = this.tip()
               , title = this.getTitle()
 
-      $tip.find('.tooltip-inner')[this.isHTML(title) ? 'html' : 'text'](title)
+      $tip.find('.tooltip-inner')[this.isHTML(title) ? 'ui' : 'text'](title)
       $tip.removeClass('fade in top bottom left right')
     }, hide:function () {
       var that = this
@@ -1092,7 +1092,7 @@
 }(window.jQuery);
 /* ===========================================================
  * bootstrap-popover.js v2.0.4
- * http://twitter.github.com/bootstrap/javascript.html#popovers
+ * http://twitter.github.com/bootstrap/javascript.ui#popovers
  * ===========================================================
  * Copyright 2012 Twitter, Inc.
  *
@@ -1133,8 +1133,8 @@
               , title = this.getTitle()
               , content = this.getContent()
 
-      $tip.find('.popover-title')[this.isHTML(title) ? 'html' : 'text'](title)
-      $tip.find('.popover-content > *')[this.isHTML(content) ? 'html' : 'text'](content)
+      $tip.find('.popover-title')[this.isHTML(title) ? 'ui' : 'text'](title)
+      $tip.find('.popover-content > *')[this.isHTML(content) ? 'ui' : 'text'](content)
 
       $tip.removeClass('fade top bottom left right in')
     }, hasContent:function () {
@@ -1180,7 +1180,7 @@
 }(window.jQuery);
 /* =============================================================
  * bootstrap-scrollspy.js v2.0.4
- * http://twitter.github.com/bootstrap/javascript.html#scrollspy
+ * http://twitter.github.com/bootstrap/javascript.ui#scrollspy
  * =============================================================
  * Copyright 2012 Twitter, Inc.
  *
@@ -1329,7 +1329,7 @@
 }(window.jQuery);
 /* ========================================================
  * bootstrap-tab.js v2.0.4
- * http://twitter.github.com/bootstrap/javascript.html#tabs
+ * http://twitter.github.com/bootstrap/javascript.ui#tabs
  * ========================================================
  * Copyright 2012 Twitter, Inc.
  *
@@ -1459,7 +1459,7 @@
 }(window.jQuery);
 /* =============================================================
  * bootstrap-typeahead.js v2.0.4
- * http://twitter.github.com/bootstrap/javascript.html#typeahead
+ * http://twitter.github.com/bootstrap/javascript.ui#typeahead
  * =============================================================
  * Copyright 2012 Twitter, Inc.
  *

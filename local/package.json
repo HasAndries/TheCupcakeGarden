@@ -1,4 +1,10 @@
 {
-  "name": "tcg-local",
-  "main": "html/index.html"
+    "name": "tcg-local",
+    "main": "ui/index.html",
+    "dependencies":{
+
+    },
+    "devDependencies": {
+        "jake": "latest"
+    }
 }

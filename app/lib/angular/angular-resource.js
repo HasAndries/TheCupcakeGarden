@@ -200,10 +200,10 @@
    <a href="{{item.actor.profileUrl}}">{{item.actor.name}}</a>
    <a href ng-click="expandReplies(item)" style="float: right;">Expand replies: {{item.links.replies[0].count}}</a>
    </h1>
-   {{item.object.content | html}}
+   {{item.object.content | ui}}
    <div ng-repeat="reply in item.replies.data.items" style="margin-left: 20px;">
    <img src="{{reply.actor.thumbnailUrl}}" style="max-height:30px;max-width:30px;"/>
-   <a href="{{reply.actor.profileUrl}}">{{reply.actor.name}}</a>: {{reply.content | html}}
+   <a href="{{reply.actor.profileUrl}}">{{reply.actor.name}}</a>: {{reply.content | ui}}
    </div>
    </div>
    </div>
@@ -252,7 +252,7 @@
     /**
      * This method is intended for encoding *key* or *value* parts of query component. We need a custom
      * method becuase encodeURIComponent is too agressive and encodes stuff that doesn't have to be
-     * encoded per http://tools.ietf.org/html/rfc3986:
+     * encoded per http://tools.ietf.org/ui/rfc3986:
      *    query       = *( pchar / "/" / "?" )
      *    pchar         = unreserved / pct-encoded / sub-delims / ":" / "@"
      *    unreserved    = ALPHA / DIGIT / "-" / "." / "_" / "~"

@@ -790,7 +790,7 @@
   function startingTag(element) {
     element = jqLite(element).clone();
     try {
-      // turns out IE does not let you set .html() on elements which
+      // turns out IE does not let you set .ui() on elements which
       // are not allowed to have children. So we just ignore it.
       element.html('');
     } catch (e) {
@@ -852,7 +852,7 @@
   /**
    * This method is intended for encoding *key* or *value* parts of query component. We need a custom
    * method becuase encodeURIComponent is too agressive and encodes stuff that doesn't have to be
-   * encoded per http://tools.ietf.org/html/rfc3986:
+   * encoded per http://tools.ietf.org/ui/rfc3986:
    *    query       = *( pchar / "/" / "?" )
    *    pchar         = unreserved / pct-encoded / sub-delims / ":" / "@"
    *    unreserved    = ALPHA / DIGIT / "-" / "." / "_" / "~"
@@ -886,7 +886,7 @@
    * ot the root of the page.
    *
    * In the example below if the `ngApp` directive would not be placed
-   * on the `html` element then the document would not be compiled
+   * on the `ui` element then the document would not be compiled
    * and the `{{ 1+2 }}` would not be resolved to `3`.
    *
    * `ngApp` is the easiest way to bootstrap an application.
@@ -902,7 +902,7 @@
     var elements = [element],
             appElement,
             module,
-            names = ['ng:app', 'ng-app', 'x-ng-app', 'data-ng-app'],
+            names = ['ng:ui', 'ng-ui', 'x-ng-ui', 'data-ng-ui'],
             NG_APP_CLASS_REGEXP = /\sng[:\-]app(:\s*([\w\d_]+);?)?\s/;
 
     function append(element) {
@@ -952,7 +952,7 @@
    *
    * @param {Element} element DOM element which is the root of angular application.
    * @param {Array<String|Function>=} modules an array of module declarations. See: {@link angular.module modules}
-   * @returns {AUTO.$injector} Returns the newly created injector for this app.
+   * @returns {AUTO.$injector} Returns the newly created injector for this ui.
    */
   function bootstrap(element, modules) {
     element = jqLite(element);
@@ -996,7 +996,7 @@
       });
       JQLitePatchJQueryRemove('remove', true);
       JQLitePatchJQueryRemove('empty');
-      JQLitePatchJQueryRemove('html');
+      JQLitePatchJQueryRemove('ui');
     } else {
       jqLite = JQLite;
     }
@@ -1443,7 +1443,7 @@
    * - [eq()](http://api.jquery.com/eq/)
    * - [find()](http://api.jquery.com/find/) - Limited to lookups by tag name.
    * - [hasClass()](http://api.jquery.com/hasClass/)
-   * - [html()](http://api.jquery.com/html/)
+   * - [ui()](http://api.jquery.com/ui/)
    * - [next()](http://api.jquery.com/next/)
    * - [parent()](http://api.jquery.com/parent/)
    * - [prepend()](http://api.jquery.com/prepend/)
@@ -1719,10 +1719,10 @@
   function JQLiteInheritedData(element, name, value) {
     element = jqLite(element);
 
-    // if element is the document object work with the html element instead
+    // if element is the document object work with the ui element instead
     // this makes $(document).scope() possible
     if (element[0].nodeType == 9) {
-      element = element.find('html');
+      element = element.find('ui');
     }
 
     while (element.length) {
@@ -3481,7 +3481,7 @@
    * @name ng.$templateCache
    *
    * @description
-   * Cache used for storing html templates.
+   * Cache used for storing ui templates.
    *
    * See {@link ng.$cacheFactory $cacheFactory}.
    *
@@ -3549,7 +3549,7 @@
    function(value) {
    // when the 'compile' expression changes
    // assign it into the current DOM
-   element.html(value);
+   element.ui(value);
 
    // compile the new DOM and link it to the current
    // scope.
@@ -3564,19 +3564,19 @@
 
    function Ctrl($scope) {
    $scope.name = 'Angular';
-   $scope.html = 'Hello {{name}}';
+   $scope.ui = 'Hello {{name}}';
    }
    </script>
    <div ng-controller="Ctrl">
    <input ng-model="name"> <br>
-   <textarea ng-model="html"></textarea> <br>
-   <div compile="html"></div>
+   <textarea ng-model="ui"></textarea> <br>
+   <div compile="ui"></div>
    </div>
    </doc:source>
    <doc:scenario>
    it('should auto compile', function() {
    expect(element('div[compile]').text()).toBe('Hello Angular');
-   input('html').enter('{{name}}!');
+   input('ui').enter('{{name}}!');
    expect(element('div[compile]').text()).toBe('Angular!');
    });
    </doc:scenario>
@@ -6961,11 +6961,11 @@
      *
      *    - `controller` – `{function()=}` – Controller fn that should be associated with newly
      *      created scope.
-     *    - `template` – `{string=}` –  html template as a string that should be used by
+     *    - `template` – `{string=}` –  ui template as a string that should be used by
      *      {@link ng.directive:ngView ngView} or
      *      {@link ng.directive:ngInclude ngInclude} directives.
      *      this property takes precedence over `templateUrl`.
-     *    - `templateUrl` – `{string=}` – path to an html template that should be used by
+     *    - `templateUrl` – `{string=}` – path to an ui template that should be used by
      *      {@link ng.directive:ngView ngView}.
      *    - `resolve` - `{Object.<string, function>=}` - An optional map of dependencies which should
      *      be injected into the controller. If any of these dependencies are promises, they will be
@@ -7074,7 +7074,7 @@
          to get it working on jsfiddle as well.
 
          <example module="ngView">
-         <file name="index.html">
+         <file name="index.ui">
          <div ng-controller="MainCntl">
          Choose:
          <a href="Book/Moby">Moby</a> |
@@ -7094,12 +7094,12 @@
          </div>
          </file>
 
-         <file name="book.html">
+         <file name="book.ui">
          controller: {{name}}<br />
          Book Id: {{params.bookId}}<br />
          </file>
 
-         <file name="chapter.html">
+         <file name="chapter.ui">
          controller: {{name}}<br />
          Book Id: {{params.bookId}}<br />
          Chapter Id: {{params.chapterId}}
@@ -7108,7 +7108,7 @@
          <file name="script.js">
          angular.module('ngView', [], function($routeProvider, $locationProvider) {
          $routeProvider.when('/Book/:bookId', {
-         templateUrl: 'book.html',
+         templateUrl: 'book.ui',
          controller: BookCntl,
          resolve: {
          // I will cause a 1 second delay
@@ -7120,7 +7120,7 @@
          }
          });
          $routeProvider.when('/Book/:bookId/ch/:chapterId', {
-         templateUrl: 'chapter.html',
+         templateUrl: 'chapter.ui',
          controller: ChapterCntl
          });
 
@@ -7402,7 +7402,7 @@
    * @example
    * <pre>
    *  // Given:
-   *  // URL: http://server.com/index.html#/Chapter/1/Section/2?search=moby
+   *  // URL: http://server.com/index.ui#/Chapter/1/Section/2?search=moby
    *  // Route: /Chapter/:chapterId/Section/:sectionId
    *  //
    *  // Then
@@ -8681,7 +8681,7 @@
          *
          * @example
          <example>
-         <file name="index.html">
+         <file name="index.ui">
          <div ng-controller="FetchCtrl">
          <select ng-model="method">
          <option>GET</option>
@@ -8689,7 +8689,7 @@
          </select>
          <input type="text" ng-model="url" size="80"/>
          <button ng-click="fetch()">fetch</button><br>
-         <button ng-click="updateModel('GET', 'http-hello.html')">Sample GET</button>
+         <button ng-click="updateModel('GET', 'http-hello.ui')">Sample GET</button>
          <button ng-click="updateModel('JSONP', 'http://angularjs.org/greet.php?callback=JSON_CALLBACK&name=Super%20Hero')">Sample JSONP</button>
          <button ng-click="updateModel('JSONP', 'http://angularjs.org/doesntexist&callback=JSON_CALLBACK')">Invalid JSONP</button>
          <pre>http status code: {{status}}</pre>
@@ -8699,7 +8699,7 @@
          <file name="script.js">
          function FetchCtrl($scope, $http, $templateCache) {
          $scope.method = 'GET';
-         $scope.url = 'http-hello.html';
+         $scope.url = 'http-hello.ui';
 
          $scope.fetch = function() {
          $scope.code = null;
@@ -8722,7 +8722,7 @@
          };
          }
          </file>
-         <file name="http-hello.html">
+         <file name="http-hello.ui">
          Hello, $http!
          </file>
          <file name="scenario.js">
@@ -9116,7 +9116,7 @@
         var status;
 
         // In IE6 and 7, this might be called synchronously when xhr.send below is called and the
-        // response is in the cache. the promise api will ensure that to the app code the api is
+        // response is in the cache. the promise api will ensure that to the ui code the api is
         // always async
         xhr.onreadystatechange = function () {
           if (xhr.readyState == 4) {
@@ -10284,7 +10284,7 @@
   }
 
   /*
-   * Modifies the default behavior of html A tag, so that the default action is prevented when href
+   * Modifies the default behavior of ui A tag, so that the default action is prevented when href
    * attribute is empty.
    *
    * The reasoning for this change is to allow easy creation of action links with `ngClick` directive
@@ -10806,7 +10806,7 @@
    *  button or input field of type submit (input[type=submit])
    *
    * To prevent double execution of the handler, use only one of ngSubmit or ngClick directives. This
-   * is because of the following form submission rules coming from the html spec:
+   * is because of the following form submission rules coming from the ui spec:
    *
    * - If a form has only one input field then hitting enter in this field triggers form submit
    * (`ngSubmit`)
@@ -11704,7 +11704,7 @@
 
    // Specify how UI should be updated
    ngModel.$render = function() {
-   element.html(ngModel.$viewValue || '');
+   element.ui(ngModel.$viewValue || '');
    };
 
    // Listen for change events to enable binding
@@ -11715,13 +11715,13 @@
 
    // Write data to the model
    function read() {
-   ngModel.$setViewValue(element.html());
+   ngModel.$setViewValue(element.ui());
    }
    }
    };
    });
    </file>
-   <file name="index.html">
+   <file name="index.ui">
    <form name="myForm">
    <div contenteditable
    name="myWidget" ng-model="userContent"
@@ -12318,7 +12318,7 @@
    *
    * @example
    <example>
-   <file name="index.html">
+   <file name="index.ui">
    <input type="button" value="set" ng-click="myVar='my-class'">
    <input type="button" value="clear" ng-click="myVar=''">
    <br>
@@ -12367,7 +12367,7 @@
    *
    * @example
    <example>
-   <file name="index.html">
+   <file name="index.ui">
    <ol ng-init="names=['John', 'Mary', 'Cate', 'Suz']">
    <li ng-repeat="name in names">
    <span ng-class-odd="'odd'" ng-class-even="'even'">
@@ -12414,7 +12414,7 @@
    *
    * @example
    <example>
-   <file name="index.html">
+   <file name="index.ui">
    <ol ng-init="names=['John', 'Mary', 'Cate', 'Suz']">
    <li ng-repeat="name in names">
    <span ng-class-odd="'odd'" ng-class-even="'even'">
@@ -12448,9 +12448,9 @@
    * @name ng.directive:ngCloak
    *
    * @description
-   * The `ngCloak` directive is used to prevent the Angular html template from being briefly
+   * The `ngCloak` directive is used to prevent the Angular ui template from being briefly
    * displayed by the browser in its raw (uncompiled) form while your application is loading. Use this
-   * directive to avoid the undesirable flicker effect caused by the html template display.
+   * directive to avoid the undesirable flicker effect caused by the ui template display.
    *
    * The directive can be applied to the `<body>` element, but typically a fine-grained application is
    * prefered in order to benefit from progressive rendering of the browser view.
@@ -12464,12 +12464,12 @@
    * }
    * </pre>
    *
-   * When this css rule is loaded by the browser, all html elements (including their children) that
+   * When this css rule is loaded by the browser, all ui elements (including their children) that
    * are tagged with the `ng-cloak` directive are hidden. When Angular comes across this directive
    * during the compilation of the template it deletes the `ngCloak` element attribute, which
    * makes the compiled element visible.
    *
-   * For the best result, `angular.js` script must be loaded in the head section of the html file;
+   * For the best result, `angular.js` script must be loaded in the head section of the ui file;
    * alternatively, the css rule (above) must be included in the external stylesheet of the
    * application.
    *
@@ -12612,14 +12612,14 @@
    *
    * @description
    * Enables [CSP (Content Security Policy)](https://developer.mozilla.org/en/Security/CSP) support.
-   * This directive should be used on the root element of the application (typically the `<html>`
+   * This directive should be used on the root element of the application (typically the `<ui>`
    * element or other element with the {@link ng.directive:ngApp ngApp}
    * directive).
    *
    * If enabled the performance of template expression evaluator will suffer slightly, so don't enable
    * this mode unless you need it.
    *
-   * @element html
+   * @element ui
    */
 
   var ngCspDirective = ['$sniffer', function ($sniffer) {
@@ -12867,7 +12867,7 @@
    * @scope
    *
    * @param {string} ngInclude|src angular expression evaluating to URL. If the source is a string constant,
-   *                 make sure you wrap it in quotes, e.g. `src="'myPartialTemplate.html'"`.
+   *                 make sure you wrap it in quotes, e.g. `src="'myPartialTemplate.ui'"`.
    * @param {string=} onload Expression to evaluate when a new partial is loaded.
    *
    * @param {string=} autoscroll Whether `ngInclude` should call {@link ng.$anchorScroll
@@ -12879,7 +12879,7 @@
    *
    * @example
    <example>
-   <file name="index.html">
+   <file name="index.ui">
    <div ng-controller="Ctrl">
    <select ng-model="template" ng-options="t.name for t in templates">
    <option value="">(blank)</option>
@@ -12892,26 +12892,26 @@
    <file name="script.js">
    function Ctrl($scope) {
    $scope.templates =
-   [ { name: 'template1.html', url: 'template1.html'}
-   , { name: 'template2.html', url: 'template2.html'} ];
+   [ { name: 'template1.ui', url: 'template1.ui'}
+   , { name: 'template2.ui', url: 'template2.ui'} ];
    $scope.template = $scope.templates[0];
    }
    </file>
-   <file name="template1.html">
-   Content of template1.html
+   <file name="template1.ui">
+   Content of template1.ui
    </file>
-   <file name="template2.html">
-   Content of template2.html
+   <file name="template2.ui">
+   Content of template2.ui
    </file>
    <file name="scenario.js">
-   it('should load template1.html', function() {
+   it('should load template1.ui', function() {
    expect(element('.doc-example-live [ng-include]').text()).
-   toMatch(/Content of template1.html/);
+   toMatch(/Content of template1.ui/);
    });
-   it('should load template2.html', function() {
+   it('should load template2.ui', function() {
    select('template').option('1');
    expect(element('.doc-example-live [ng-include]').text()).
-   toMatch(/Content of template2.html/);
+   toMatch(/Content of template2.ui/);
    });
    it('should change to blank', function() {
    select('template').option('');
@@ -13527,7 +13527,7 @@
    *
    * @example
    <example>
-   <file name="index.html">
+   <file name="index.ui">
    <input type="button" value="set" ng-click="myStyle={color:'red'}">
    <input type="button" value="clear" ng-click="myStyle={}">
    <br/>
@@ -13737,14 +13737,14 @@
    * @description
    * # Overview
    * `ngView` is a directive that complements the {@link ng.$route $route} service by
-   * including the rendered template of the current route into the main layout (`index.html`) file.
+   * including the rendered template of the current route into the main layout (`index.ui`) file.
    * Every time the current route changes, the included view changes with it according to the
    * configuration of the `$route` service.
    *
    * @scope
    * @example
    <example module="ngView">
-   <file name="index.html">
+   <file name="index.ui">
    <div ng-controller="MainCntl">
    Choose:
    <a href="Book/Moby">Moby</a> |
@@ -13764,12 +13764,12 @@
    </div>
    </file>
 
-   <file name="book.html">
+   <file name="book.ui">
    controller: {{name}}<br />
    Book Id: {{params.bookId}}<br />
    </file>
 
-   <file name="chapter.html">
+   <file name="chapter.ui">
    controller: {{name}}<br />
    Book Id: {{params.bookId}}<br />
    Chapter Id: {{params.chapterId}}
@@ -13778,11 +13778,11 @@
    <file name="script.js">
    angular.module('ngView', [], function($routeProvider, $locationProvider) {
    $routeProvider.when('/Book/:bookId', {
-   templateUrl: 'book.html',
+   templateUrl: 'book.ui',
    controller: BookCntl
    });
    $routeProvider.when('/Book/:bookId/ch/:chapterId', {
-   templateUrl: 'chapter.html',
+   templateUrl: 'chapter.ui',
    controller: ChapterCntl
    });
 
@@ -13906,11 +13906,11 @@
    * @example
    <doc:example>
    <doc:source>
-   <script type="text/ng-template" id="/tpl.html">
+   <script type="text/ng-template" id="/tpl.ui">
    Content of the template.
    </script>
 
-   <a ng-click="currentTpl='/tpl.html'" id="tpl-link">Load inlined template</a>
+   <a ng-click="currentTpl='/tpl.ui'" id="tpl-link">Load inlined template</a>
    <div id="tpl-content" ng-include src="currentTpl"></div>
    </doc:source>
    <doc:scenario>
@@ -14257,7 +14257,7 @@
             // becomes the compilation root
             nullOption.removeClass('ng-scope');
 
-            // we need to remove it before calling selectElement.html('') because otherwise IE will
+            // we need to remove it before calling selectElement.ui('') because otherwise IE will
             // remove the label from the element. wtf?
             nullOption.remove();
           }
