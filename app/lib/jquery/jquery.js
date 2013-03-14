@@ -134,7 +134,7 @@
           // Verify a match, and that no context was specified for #id
           if (match && (match[1] || !context)) {
 
-            // HANDLE: $(ui) -> $(array)
+            // HANDLE: $(html) -> $(array)
             if (match[1]) {
               context = context instanceof jQuery ? context[0] : context;
               doc = ( context ? context.ownerDocument || context : document );
@@ -3555,7 +3555,7 @@
   }
 
 // jQuery.Event is based on DOM3 Events as specified by the ECMAScript Language Binding
-// http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.ui
+// http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
   jQuery.Event.prototype = {
     preventDefault:function () {
       this.isDefaultPrevented = returnTrue;
@@ -6390,7 +6390,7 @@
           continue;
         }
 
-        // Convert ui string into DOM nodes
+        // Convert html string into DOM nodes
         if (typeof elem === "string") {
           if (!rhtml.test(elem)) {
             elem = context.createTextNode(elem);
@@ -6415,7 +6415,7 @@
               createSafeFragment(context).appendChild(div);
             }
 
-            // Go to ui and back, then peel off extra wrappers
+            // Go to html and back, then peel off extra wrappers
             div.innerHTML = wrap[1] + elem + wrap[2];
 
             // Move to the right depth
@@ -7166,7 +7166,7 @@
       jQuery.ajax({
         url:url,
         type:type,
-        dataType:"ui",
+        dataType:"html",
         data:params,
         // Complete callback (responseText is used internally)
         complete:function (jqXHR, status, responseText) {
@@ -7304,7 +7304,7 @@
 
       accepts:{
         xml:"application/xml, text/xml",
-        html:"text/ui",
+        html:"text/html",
         text:"text/plain",
         json:"application/json, text/javascript",
         "*":allTypes
@@ -7329,7 +7329,7 @@
         // Convert anything to text
         "* text":window.String,
 
-        // Text to ui (true = no transformation)
+        // Text to html (true = no transformation)
         "text html":true,
 
         // Evaluate text as a json expression
@@ -9038,7 +9038,7 @@
         // document to it; WebKit & Firefox won't allow reusing the iframe document.
         if (!iframeDoc || !iframe.createElement) {
           iframeDoc = ( iframe.contentWindow || iframe.contentDocument ).document;
-          iframeDoc.write(( jQuery.support.boxModel ? "<!doctype ui>" : "" ) + "<ui><body>");
+          iframeDoc.write(( jQuery.support.boxModel ? "<!doctype html>" : "" ) + "<html><body>");
           iframeDoc.close();
         }
 

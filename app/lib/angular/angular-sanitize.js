@@ -35,14 +35,14 @@
    * @function
    *
    * @description
-   *   The input is sanitized by parsing the ui into tokens. All safe tokens (from a whitelist) are
-   *   then serialized back to properly escaped ui string. This means that no unsafe input can make
+   *   The input is sanitized by parsing the html into tokens. All safe tokens (from a whitelist) are
+   *   then serialized back to properly escaped html string. This means that no unsafe input can make
    *   it into the returned string, however, since our parser is more strict than a typical browser
    *   parser, it's possible that some obscure input, which would be recognized as valid HTML by a
    *   browser, won't make it through the sanitizer.
    *
    * @param {string} html Html input.
-   * @returns {string} Sanitized ui.
+   * @returns {string} Sanitized html.
    *
    * @example
    <doc:example module="ngSanitize">
@@ -50,7 +50,7 @@
    <script>
    function Ctrl($scope) {
    $scope.snippet =
-   '<p style="color:blue">an ui\n' +
+   '<p style="color:blue">an html\n' +
    '<em onmouseover="this.textContent=\'PWN3D!\'">click here</em>\n' +
    'snippet</p>';
    }
@@ -63,53 +63,53 @@
    <td>Source</td>
    <td>Rendered</td>
    </tr>
-   <tr id="ui-filter">
-   <td>ui filter</td>
+   <tr id="html-filter">
+   <td>html filter</td>
    <td>
-   <pre>&lt;div ng-bind-ui="snippet"&gt;<br/>&lt;/div&gt;</pre>
+   <pre>&lt;div ng-bind-html="snippet"&gt;<br/>&lt;/div&gt;</pre>
    </td>
    <td>
-   <div ng-bind-ui="snippet"></div>
+   <div ng-bind-html="snippet"></div>
    </td>
    </tr>
-   <tr id="escaped-ui">
+   <tr id="escaped-html">
    <td>no filter</td>
    <td><pre>&lt;div ng-bind="snippet"&gt;<br/>&lt;/div&gt;</pre></td>
    <td><div ng-bind="snippet"></div></td>
    </tr>
-   <tr id="ui-unsafe-filter">
-   <td>unsafe ui filter</td>
-   <td><pre>&lt;div ng-bind-ui-unsafe="snippet"&gt;<br/>&lt;/div&gt;</pre></td>
-   <td><div ng-bind-ui-unsafe="snippet"></div></td>
+   <tr id="html-unsafe-filter">
+   <td>unsafe html filter</td>
+   <td><pre>&lt;div ng-bind-html-unsafe="snippet"&gt;<br/>&lt;/div&gt;</pre></td>
+   <td><div ng-bind-html-unsafe="snippet"></div></td>
    </tr>
    </table>
    </div>
    </doc:source>
    <doc:scenario>
-   it('should sanitize the ui snippet ', function() {
-   expect(using('#ui-filter').element('div').ui()).
-   toBe('<p>an ui\n<em>click here</em>\nsnippet</p>');
+   it('should sanitize the html snippet ', function() {
+   expect(using('#html-filter').element('div').html()).
+   toBe('<p>an html\n<em>click here</em>\nsnippet</p>');
    });
 
    it('should escape snippet without any filter', function() {
-   expect(using('#escaped-ui').element('div').ui()).
-   toBe("&lt;p style=\"color:blue\"&gt;an ui\n" +
+   expect(using('#escaped-html').element('div').html()).
+   toBe("&lt;p style=\"color:blue\"&gt;an html\n" +
    "&lt;em onmouseover=\"this.textContent='PWN3D!'\"&gt;click here&lt;/em&gt;\n" +
    "snippet&lt;/p&gt;");
    });
 
    it('should inline raw snippet if filtered as unsafe', function() {
-   expect(using('#ui-unsafe-filter').element("div").ui()).
-   toBe("<p style=\"color:blue\">an ui\n" +
+   expect(using('#html-unsafe-filter').element("div").html()).
+   toBe("<p style=\"color:blue\">an html\n" +
    "<em onmouseover=\"this.textContent='PWN3D!'\">click here</em>\n" +
    "snippet</p>");
    });
 
    it('should update', function() {
    input('snippet').enter('new <b>text</b>');
-   expect(using('#ui-filter').binding('snippet')).toBe('new <b>text</b>');
-   expect(using('#escaped-ui').element('div').ui()).toBe("new &lt;b&gt;text&lt;/b&gt;");
-   expect(using('#ui-unsafe-filter').binding("snippet")).toBe('new <b>text</b>');
+   expect(using('#html-filter').binding('snippet')).toBe('new <b>text</b>');
+   expect(using('#escaped-html').element('div').html()).toBe("new &lt;b&gt;text&lt;/b&gt;");
+   expect(using('#html-unsafe-filter').binding("snippet")).toBe('new <b>text</b>');
    });
    </doc:scenario>
    </doc:example>
@@ -134,15 +134,15 @@
 
 
 // Good source of info about elements and attributes
-// http://dev.w3.org/html5/spec/Overview.ui#semantics
-// http://simon.html5.org/ui-elements
+// http://dev.w3.org/html5/spec/Overview.html#semantics
+// http://simon.html5.org/html-elements
 
 // Safe Void Elements - HTML5
-// http://dev.w3.org/html5/spec/Overview.ui#void-elements
+// http://dev.w3.org/html5/spec/Overview.html#void-elements
   var voidElements = makeMap("area,br,col,hr,img,wbr");
 
 // Elements that you can, intentionally, leave open (and which close themselves)
-// http://dev.w3.org/html5/spec/Overview.ui#optional-tags
+// http://dev.w3.org/html5/spec/Overview.html#optional-tags
   var optionalEndTagBlockElements = makeMap("colgroup,dd,dt,li,p,tbody,td,tfoot,th,thead,tr"),
           optionalEndTagInlineElements = makeMap("rp,rt"),
           optionalEndTagElements = angular.extend({}, optionalEndTagInlineElements, optionalEndTagBlockElements);
@@ -348,7 +348,7 @@
 
   /**
    * create an HTML/XML writer which writes to buffer
-   * @param {Array} buf use buf.jain('') to get out sanitized ui string
+   * @param {Array} buf use buf.jain('') to get out sanitized html string
    * @returns {object} in the form of {
    *     start: function(tag, attrs, unary) {},
    *     end: function(tag) {},
@@ -432,7 +432,7 @@
    * @function
    *
    * @description
-   *   Finds links in text input and turns them into ui links. Supports http/https/ftp/mailto and
+   *   Finds links in text input and turns them into html links. Supports http/https/ftp/mailto and
    *   plain email address links.
    *
    * @param {string} text Input text.
@@ -462,13 +462,13 @@
    <tr id="linky-filter">
    <td>linky filter</td>
    <td>
-   <pre>&lt;div ng-bind-ui="snippet | linky"&gt;<br>&lt;/div&gt;</pre>
+   <pre>&lt;div ng-bind-html="snippet | linky"&gt;<br>&lt;/div&gt;</pre>
    </td>
    <td>
-   <div ng-bind-ui="snippet | linky"></div>
+   <div ng-bind-html="snippet | linky"></div>
    </td>
    </tr>
-   <tr id="escaped-ui">
+   <tr id="escaped-html">
    <td>no filter</td>
    <td><pre>&lt;div ng-bind="snippet"&gt;<br>&lt;/div&gt;</pre></td>
    <td><div ng-bind="snippet"></div></td>
@@ -486,7 +486,7 @@
    });
 
    it ('should not linkify snippet without the linky filter', function() {
-   expect(using('#escaped-ui').binding('snippet')).
+   expect(using('#escaped-html').binding('snippet')).
    toBe("Pretty text with some links:\n" +
    "http://angularjs.org/,\n" +
    "mailto:us@somewhere.org,\n" +
@@ -498,7 +498,7 @@
    input('snippet').enter('new http://link.');
    expect(using('#linky-filter').binding('snippet | linky')).
    toBe('new <a href="http://link">http://link</a>.');
-   expect(using('#escaped-ui').binding('snippet')).toBe('new http://link.');
+   expect(using('#escaped-html').binding('snippet')).toBe('new http://link.');
    });
    </doc:scenario>
    </doc:example>
