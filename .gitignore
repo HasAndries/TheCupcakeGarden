@@ -7,4 +7,4 @@ build.xml
 .settings
 .idea/*
 logs
-content/gallery
+app/content/gallery
