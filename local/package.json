@@ -1,10 +1,14 @@
 {
     "name": "tcg-local",
+    "author": "Andries Coetzee",
+    "version": "0.0.1",
     "main": "ui/index.html",
-    "dependencies":{
-
+    "dependencies": {
     },
     "devDependencies": {
-        "jake": "latest"
+        "jake": "0.5.x"
+    },
+    "engines": {
+        "node": "*"
     }
 }
