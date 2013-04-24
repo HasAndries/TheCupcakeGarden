@@ -10,8 +10,8 @@ function NavController($scope, $rootScope, google) {
     {'name':'home', 'link':''},
     {'name':'gallery', 'link':'gallery'},
     {'name':'cupcakes', 'link':'cupcakes'},
-    {'name':'in the store', 'link':'in-the-store'},
-    {'name':'functions', 'link':'functions'},
+    {'name':'specials', 'link':'specials'},
+    {'name':'cakes', 'link':'cakes'},
     {'name':'contact us', 'link':'contact-us'},
     {'name':'about us', 'link':'about-us'}
   ];

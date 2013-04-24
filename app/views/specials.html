@@ -1,0 +1,13 @@
+<div class="content other" ng-init="init()">
+	<div class="row">
+		<div class="span9">
+			<h1>Specials</h1>
+			<br>
+		</div>
+	</div>
+    <div class="row" ng-repeat="special in specials">
+    	<div class="span9 thumbnail special">
+    		<img ng-src="{{special}}" />
+    	</div>
+    </div>
+</div>

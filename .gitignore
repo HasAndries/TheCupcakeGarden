@@ -8,3 +8,4 @@ build.xml
 .idea/*
 logs
 app/content/gallery
+app/content/specials
