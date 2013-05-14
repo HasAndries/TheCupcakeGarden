@@ -1,7 +1,7 @@
 var theCupcakeGardenServices = angular.module('theCupcakeGarden.services', []);
 var theCupcakeGarden = angular.module('theCupcakeGarden', ['theCupcakeGarden.services']);
 
-theCupcakeGarden.config(['$routeProvider', function ($routeProvider) {
+theCupcakeGarden.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider.when('/', {templateUrl: 'views/home.html'});
     $routeProvider.when('/gallery', {templateUrl: 'views/gallery.html', controller: GalleryController});
     $routeProvider.when('/cupcakes', {templateUrl: 'views/cupcakes.html'});
@@ -10,6 +10,8 @@ theCupcakeGarden.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/contact-us', {templateUrl: 'views/contact-us.html'});
     $routeProvider.when('/about-us', {templateUrl: 'views/about-us.html'});
     $routeProvider.otherwise({redirectTo: '/'});
+	
+	$locationProvider.html5Mode(true);
 }]);
 
 theCupcakeGarden
